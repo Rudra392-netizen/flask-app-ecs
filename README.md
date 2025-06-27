@@ -1,6 +1,6 @@
 # Flask App with Docker
 
-A simple **Flask** web application containerized with **Docker**, created by **Rudra392-netizen**.
+A simple **Flask** web application containerized with **Docker**.
 
 ---
 
@@ -42,8 +42,6 @@ sudo systemctl enable docker
 
 sudo usermod -aG docker $USER
 
-## 🛠 Setup & Run Locally (Without Docker)
-
 ## Clone the repository:
 
 git clone https://github.com/Rudra392-netizen/flask-app-ecs.git
@@ -78,7 +76,7 @@ docker run -p 5000:5000 flask-app
 
 Access in browser at: http://localhost:5000
 
-🐞 Common Issues & Solutions
+## 🐞 Common Issues & Solutions
 
 Problem	Cause	Solution
 
@@ -98,7 +96,4 @@ This project is licensed under the MIT License.
 
 See the LICENSE file for full terms.
 
-## Github_url
 
-
-## Username
