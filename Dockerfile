@@ -1,24 +1,15 @@
-# Base image (OS)
-
-FROM python:3.9-slim
-
-# Working directory
-
+#First create a base image in which all the required libraries and dependencies are installed
+FROM python:3.7
+#create a working directory where the source code will be stored
 WORKDIR /app
-
-# Copy src code to container
-
-COPY . .
-
-# Run the build commands
-
+#Now copy all the files from the HOST to the container
+COPY app.py /app/app.py
+COPY requirements.txt /app/requirements.txt
+COPY run.py /app/run.py
+#Now install all the dependencies
 RUN pip install -r requirements.txt
-
-# expose port 80
-
-EXPOSE 80
-
-# serve the app / run the app (keep it running)
-
+#Expose the port number in which the application will run
+EXPOSE 8000
+#Now run the application
 CMD ["python","run.py"]
 
