@@ -1,5 +1,5 @@
 #First create a base image in which all the required libraries and dependencies are installed
-FROM python:3.7
+FROM python:3.9-slim
 #create a working directory where the source code will be stored
 WORKDIR /app
 #Now copy all the files from the HOST to the container
