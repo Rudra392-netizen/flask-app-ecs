@@ -88,7 +88,32 @@ Problem	Cause	Solution
 
 🔐 Docker permission denied	User not in docker group	Run with sudo or use usermod command above
 
-🔁 Port conflict on 5000	Another app already using port	Use different port: -p 8080:5000
+ 🔁 Port conflict on 5000	Another app already using port	Use different port: -p 8080:5000
+
+## 🐳 Run Using Docker (Multi-Stage Build)
+This project uses a multi-stage Dockerfile to reduce the final image size and improve production-readiness.
+
+## Step 1: Build the Docker image
+
+docker build -t flask-app .
+
+## Step 2: Run the Docker container
+
+docker run -p 5000:5000 flask-app
+
+## 📍 Access the app in your browser at: http://localhost:5000
+
+## 📈 Monitor Docker Container using nohup
+
+To keep the container running in the background and monitor logs:
+
+nohup docker run -p 5000:5000 flask-app > container.log 2>&1 &
+
+Logs will be saved in container.log
+
+Use tail -f container.log to see live logs
+
+& keeps it running in the background
 
 ## 🛡 License
 
